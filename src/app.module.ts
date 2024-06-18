@@ -1,4 +1,5 @@
 import { Module } from '@nestjs/common';
+import { MongooseModule } from '@nestjs/mongoose';
 import { JogadoresModule } from './jogadores/jorgadores.module';
 
 /**
@@ -6,7 +7,9 @@ import { JogadoresModule } from './jogadores/jorgadores.module';
  * Toda aplicação nest, precisa de um module
  */
 @Module({
-  imports: [JogadoresModule],
+  imports: [
+    MongooseModule.forRoot('string de conexao'),
+    JogadoresModule],
   controllers: [],
   providers: [],
 })
